@@ -1,26 +1,26 @@
-# 3D-Abstract-Frames
-
-Abstract digital sculptures in a frame. Each frame is double-sided with a 3D mesh on one side and a flat version of the image on the other.
+# 3D Abstract Frames
 
 ## [View the NFT collection](https://opensea.io/collection/3d-af)
 
-## [Mint (MetaMask deep link)](https://metamask.app.link/send/0x4Ae665060B1f4a124A9d76FAAB222C399Bb329f9@80001?value=1e17)
+## [Mint on Polygon (MetaMask deep link)](https://metamask.app.link/send/0x4Ae665060B1f4a124A9d76FAAB222C399Bb329f9@80001?value=1e17)
 
 ![](images/banner_long_1.png)
 
-Each NFT comes with a metaverse compatible 3D model
+Each NFT comes with a metaverse compatible 3D model. The frames are double-sided with a 3D mesh on one side and a flat version of the texture on the other.
 
 ![](images/sequence_smal2.gif)
 
 View the model in augmented reality (AR) using the [Galeri](https://www.galeri.co/) app on iOS.
 
-## How to mint from the [Abstract Frame]() collection using MetaMask
+![](images/ar_frames.gif)
+
+## How to mint using MetaMask
 
 - Switch to Matic/Polygon Mainnet
 - Send 10 Matic to `0x...contract...address...`
 - View the transaction on Polyscan
 - ???
-- Once successfully validated, check OpenSea or your other favorite viewer!
+- Once successfully validated, view your NFT on [OpenSea](https://opensea.io/collection/3d-af) or [Galeri](https://www.galeri.co/)!
 
 ## How to mint using Python
 
@@ -95,7 +95,7 @@ receive() external payable
 }
 ```
 
-The minting function we use inherits from the ERC 721 implementation: https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#ERC721
+The minting function we use inherits from the ERC 721 implementation here: https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#ERC721
 
 
 ## Helpful links for smart contract development
