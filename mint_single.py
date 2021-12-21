@@ -3,7 +3,7 @@ from eth_account import Account
 from contract import SmartContract
 
 if __name__ == "__main__":
-    # Trys to mint and NFT from this collections:
+    # Trys to mint a NFT from this contract:
     network = 'mumbai'
 
     evm = SmartContract(
@@ -21,13 +21,16 @@ if __name__ == "__main__":
         supply = evm.call("tokenSupply")
         print('Token Supply:',supply)
 
-        mint_price = evm.call("mint_price") # wei
+        mint_price = evm.call("getMintPrice") # wei
 
+        # mint NFT if conditions are met
         if evm.balance_wei > mint_price and supply > 0:
 
-            # mint NFT
-            tx_hash = evm.transact("transfer", value=mint_price)
+            # default "to" value is contract address
+            tx_hash = evm.transfer(value=mint_price) # units are wei
+
+            print(SmartContract.explorer(network).format(tx_hash))
+            print("waiting for receipt...")
 
             tx_receipt = evm.w3.eth.wait_for_transaction_receipt(tx_hash)
-
-            print(SmartContract.explorer(network).format(tx_receipt.hex()))
+            print(tx_receipt)
