@@ -4,16 +4,25 @@ Abstract digital sculptures in a frame. Each frame is double-sided with a 3D mes
 
 ## [View the NFT collection](https://opensea.io/collection/3d-af)
 
+## [Mint (MetaMask deep link)](https://metamask.app.link/send/0x4Ae665060B1f4a124A9d76FAAB222C399Bb329f9@80001?value=1e17)
+
 ![](images/banner_long_1.png)
 
 Each NFT comes with a metaverse compatible 3D model
 
 ![](images/sequence_smal2.gif)
 
-View in the model in augmented reality using the [Galeri](https://www.galeri.co/) app on iOS.
+View the model in augmented reality (AR) using the [Galeri](https://www.galeri.co/) app on iOS.
 
-## How to mint from the [Abstract Frame]() collection
+## How to mint from the [Abstract Frame]() collection using MetaMask
 
+- Switch to Matic/Polygon Mainnet
+- Send 10 Matic to `0x...contract...address...`
+- View the transaction on Polyscan
+- ???
+- Once successfully validated, check OpenSea or your other favorite viewer!
+
+## How to mint using Python
 
 ### Requirements
 - Python 3
