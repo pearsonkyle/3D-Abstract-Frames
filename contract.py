@@ -62,7 +62,7 @@ class SmartContract():
         # build basic transaction
         tx_hash = {
             'to':kwargs.get('to',self.w3.toChecksumAddress(self.contract_address)), 
-            'nonce':self.nonce,
+            'nonce':kwargs.get('nonce', self.nonce),
             'value': kwargs.get("value",1), # <- UNITS
             'gasPrice': 2000000000,
             'gas': 200000,
