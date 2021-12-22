@@ -32,11 +32,7 @@ View the model in augmented reality (AR) using the [Galeri](https://www.galeri.c
 - [requirements.txt]()
 
 
-The smart contract for `3D af` is programmed to mint NFTs upon receiving a payment that is greater than the `mint_price`. This can be seen in the `receive()` method in [`af3d.sol`](). Therefore, just transfer funds to the smart contract address and it will mint you an NFT in return. This interface is similar to a gum ball machine, where the contract is loaded with NFTs ahead of time corresponding to a collection and over time people can send people to the contract and the contract returns an NFT. The simple transfer interface is minimal by design and allows easy access to the minting capabilities accross multiple programming languages. For example, one can mint using the interface on polygon explorer like such:
-
-
-
-If you're interested in a more programmatic interface for minting check out this code:
+The smart contract for `3D af` is programmed to mint NFTs upon receiving a payment that is greater than the `mint_price`. This can be seen in the `receive()` method in [`af3d.sol`](). Therefore, just transfer funds to the smart contract address and it will mint you an NFT in return. This interface is similar to a gum ball machine, where the contract is loaded with NFTs ahead of time corresponding to a collection and over time people can send people to the contract and the contract returns an NFT. The simple transfer interface is minimal by design and allows easy access to the minting capabilities accross multiple programming languages. Here is a snippet of Python code that can help you mint an NFT:
 
 ```python
 import os
@@ -109,29 +105,3 @@ The minting function we use inherits from the ERC 721 implementation here: https
 ## Helpful links for smart contract development
 - https://solidity-by-example.org/ 
 - https://remix.ethereum.org/
-
-
-## Additional capability
-
-Only the owner of the smart contract can mint this way
-
-```python
-tx_hash = evm.contract.functions.autoMint(evm.account.address, meta_link).buildTransaction({
-    'from': evm.account.address,
-    #'value': w3.toWei(0.001, 'ether'),
-    #'chainId': 0x89, # poly main
-    'chainId': 0x13881, # mumbai
-    #'chainId': 3, # ropsten
-    'gasPrice': evm.w3.toHex(evm.w3.toWei('25', 'gwei')), 
-    'nonce': nonce
-})
-
-nonce+=1
-
-# sign transaction and send
-signed_txn = evm.w3.eth.account.sign_transaction(tx_hash, private_key=evm.account.privateKey)
-
-tx_sent = evm.w3.eth.send_raw_transaction(signed_txn.rawTransaction)
-
-print(f"Tx sent: {SmartContract.explorer(network).format(tx_sent.hex())}")
-```

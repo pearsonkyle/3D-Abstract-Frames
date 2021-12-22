@@ -3,7 +3,7 @@ from eth_account import Account
 from contract import SmartContract
 
 if __name__ == "__main__":
-    # Trys to mint a NFT from this contract:
+
     network = 'mumbai'
 
     evm = SmartContract(
