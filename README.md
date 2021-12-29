@@ -27,11 +27,11 @@ from contract import SmartContract
 
 if __name__ == "__main__":
     # Trys to mint a NFT from this contract:
-    network = 'mumbai'
+    network = 'polygon'
 
     evm = SmartContract(
         account = Account.privateKeyToAccount(os.environ['PRIVATE_KEY']),
-        contract_address="0x48be78204C7D3cC3A6656c69450F2DAcd910fA3e",
+        contract_address="0x5FdEA8CB5C974d274957e8bE7318BE1489FC8896",
         abi = "af3d.json", network = network
     )
 
