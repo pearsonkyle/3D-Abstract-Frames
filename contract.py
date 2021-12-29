@@ -52,8 +52,8 @@ class SmartContract():
 
         self.chain_id = network_chainid[network]
         self.contract = self.w3.eth.contract(address=self.w3.toChecksumAddress(contract_address), abi=self.abi)
-        self.gasPrice = '20' # gwei
-        self.gas = 2000000
+        self.gasPrice = '25' # gwei
+        self.gas = 2200000
 
     def call(self, function_name, *args):
         return self.contract.functions[function_name](*args).call()
@@ -90,6 +90,10 @@ class SmartContract():
         tx_sent = self.w3.eth.send_raw_transaction(signed_txn.rawTransaction)
         return tx_sent.hex()
 
+    def check_tx(self, tx_hash):
+        # may take a while...
+        return self.w3.eth.wait_for_transaction_receipt(tx_hash)
+
     @property
     def balance(self):
         return self.w3.fromWei(self.w3.eth.get_balance(self.account.address),'ether')
@@ -109,4 +113,3 @@ class SmartContract():
     @staticmethod
     def explorer(network):
         return blockexplorer[network]
-

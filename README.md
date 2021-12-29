@@ -2,8 +2,6 @@
 
 ## [View the NFT collection](https://opensea.io/collection/3d-af)
 
-## [Mint on Polygon (MetaMask deep link)](https://metamask.app.link/send/0x4Ae665060B1f4a124A9d76FAAB222C399Bb329f9@80001?value=1e17)
-
 ![](images/banner_long_1.png)
 
 Each NFT comes with a metaverse compatible 3D model. The frames are double-sided with a 3D mesh on one side and a flat version of the texture on the other.
@@ -14,23 +12,11 @@ View the model in augmented reality (AR) using the [Galeri](https://www.galeri.c
 
 ![](images/ar_frames.gif)
 
-## How to mint using MetaMask
-
-- Switch to Matic/Polygon Mainnet
-- Send 10 Matic to `0x...contract...address...`
-- View the transaction on Polyscan
-- ???
-- Once successfully validated, view your NFT on [OpenSea](https://opensea.io/collection/3d-af) or [Galeri](https://www.galeri.co/)!
-
 ## How to mint using Python
 
 ### Requirements
 - Python 3
 - Crypto Wallet
-
-### Dependencies
-- [requirements.txt]()
-
 
 The smart contract for `3D af` is programmed to mint NFTs upon receiving a payment that is greater than the `mint_price`. This can be seen in the `receive()` method in [`af3d.sol`](). Therefore, just transfer funds to the smart contract address and it will mint you an NFT in return. This interface is similar to a gum ball machine, where the contract is loaded with NFTs ahead of time corresponding to a collection and over time people can send people to the contract and the contract returns an NFT. The simple transfer interface is minimal by design and allows easy access to the minting capabilities accross multiple programming languages. Here is a snippet of Python code that can help you mint an NFT:
 
@@ -77,6 +63,7 @@ if __name__ == "__main__":
 
 For your own sanity, please verify the source code on polyscan with the function below to ensure the safety of your tokens during the minting process. The smart contract processes incoming tokens as such
 
+
 ```js
 // transfer tokens to contract and get a nft
 receive() external payable
@@ -98,6 +85,7 @@ receive() external payable
     token++;                            // keep track of all NFTs minted
 }
 ```
+
 
 The minting function we use inherits from the ERC 721 implementation here: https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#ERC721
 
