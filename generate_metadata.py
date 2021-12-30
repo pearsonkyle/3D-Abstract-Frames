@@ -6,7 +6,7 @@ from ipfs import sample_metadata
 
 if __name__ == "__main__":
 
-    model_dir = "/Users/kpearson/Programs/misc/SmartContract/3d_af/models/first_mint"
+    model_dir = "/Users/kpearson/Programs/misc/SmartContract/3d_af/models/second_mint"
     out_dir = model_dir+"_metadata"
     if not os.path.exists(out_dir):
         os.mkdir(out_dir)
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     models = glob.glob(os.path.join(model_dir,"*.glb"))
 
     # folder of uploaded data
-    base_url = "https://gateway.pinata.cloud/ipfs/QmQKsGwDKYVxjm83isNC4X3DvbGeyiQr2c1mdWNP47SR2K/"
+    base_url = "https://gateway.pinata.cloud/ipfs/QmVaVUhzLyoq2AXEHziAFni5a4xWY2Tuei9sGxPa8256Yc/"
 
     for m, model in enumerate(models):
     
@@ -26,7 +26,7 @@ if __name__ == "__main__":
         image_link = os.path.join(base_url,os.path.basename(model.replace(".glb", "_render.png")))
 
         newmeta = dict(sample_metadata)
-        newmeta['name'] = f"3D Abstract Frame #{m+1}"
+        newmeta['name'] = f"3D Abstract Frame #{m+1+24}"
         newmeta['description'] = f"Generative 3d collectibles minted on the Polygon blockchain.\n\nHolders of this token will continue to be rewarded with new metaverse integrations forever.\nView this model in Augmented Reality (AR) using the [Galeri](https://www.galeri.co/) app.\n\nDownloads:\n\n [Full Image Render]({image_link})\n\n[3D .GLB File]({model_link})"
         newmeta['attributes'] = []
 

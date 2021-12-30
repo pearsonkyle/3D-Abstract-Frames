@@ -32,7 +32,7 @@ if __name__ == "__main__":
     nonce = evm.nonce
 
     # folder of uploaded data
-    base_url = "https://gateway.pinata.cloud/ipfs/QmTPj3rmjruBJpnE3ohEPu4jPB7ZVoRAoow6HKkehQLuQT/" 
+    base_url = "https://gateway.pinata.cloud/ipfs/QmanWTt2orJAo2LLdB5vv4JZa2dRBM7r2JrTDMVyCZoHFT/" 
 
     for m, model in enumerate(models):
 
